@@ -1,8 +1,8 @@
 'use strict';
-
 var utils = require('../utils/writer.js');
 var Application = require('../service/UserService');
 
+const userList = Application.getUserList()
 // module.exports.createApplication = async function createApplication (req, res, next) {
 //   // const body = req.body
 //   var body = req.swagger.params['body'].value;
@@ -30,13 +30,7 @@ module.exports.createApplication = function createApplication (req, res, next) {
     });
 };
 module.exports.getUserList = function getUserList (req, res, next) {
-  Application.getUserList()
-  .then(function (response) {
-    utils.writeJson(res, response);
-  })
-  .catch(function (response) {
-    utils.writeJson(res, response);
-  });
+  return userList
 }
 
 module.exports.storeApplication = async function storeApplication (req, res, next) {
