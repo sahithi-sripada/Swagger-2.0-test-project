@@ -10,7 +10,7 @@ info:
   # license:
   #   name: "Apache 2.0"
   #   url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "petstore.swagger.io"
+host: "application.swagger.io"
 basePath: "/v2"
 tags:
 - name: "application"
@@ -97,18 +97,6 @@ paths:
             $ref: "#/definitions/Application"
         "500":
           description: "Server Error"        
-securityDefinitions:
-  petstore_auth:
-    type: "oauth2"
-    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
-    flow: "implicit"
-    scopes:
-      write:pets: "modify pets in your account"
-      read:pets: "read your pets"
-  api_key:
-    type: "apiKey"
-    name: "api_key"
-    in: "header"
 definitions:
   Application:
     type: "object"
